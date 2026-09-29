@@ -1,0 +1,6 @@
+/* Cameron Band Boosters — sub-site-level customization on top of the site's
+   black & gold base theme (style.css). Loaded last, so it only needs to
+   override what should differ for this org. */
+:root {
+  --accent: #e6c14a;
+}

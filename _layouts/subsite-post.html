@@ -1,0 +1,8 @@
+---
+layout: subsite
+---
+{% assign subsite = site.data.subsites | where: "key", page.subsite | first %}
+<p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+{{ content }}
+
+<p><a href="{{ subsite.url | relative_url }}news/">&larr; Back to {{ subsite.short_name }} news</a></p>

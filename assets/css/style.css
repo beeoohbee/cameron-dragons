@@ -1,0 +1,172 @@
+:root {
+  --accent: #d4af37;
+  --accent-contrast: #14110c;
+  --text: #f5f1e6;
+  --muted: #b8ab84;
+  --bg: #14110c;
+  --card-bg: #1f1a10;
+  --border: #3a3020;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-header {
+  border-bottom: 2px solid var(--accent);
+  padding: 16px 0;
+}
+
+.site-header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-header nav a {
+  margin-left: 16px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-header nav a:first-child { margin-left: 0; }
+
+main {
+  padding: 40px 20px 60px;
+}
+
+h1 { margin-top: 0; }
+
+a { color: var(--accent); }
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-date, .post-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Sub-site hub grid (home page) */
+.subsite-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 24px 0 40px;
+}
+
+.subsite-card {
+  display: block;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.subsite-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.subsite-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.subsite-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Sub-site local header: brand + link back to the main site, stacked, plus
+   the sub-site's own About/News/Gallery/Contact nav. */
+.subsite-header .wrap {
+  align-items: flex-start;
+}
+
+.subsite-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.parent-link {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.parent-link:hover {
+  color: var(--accent);
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-placeholder {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.gallery-item figcaption {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}

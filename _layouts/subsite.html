@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+{% assign subsite = site.data.subsites | where: "key", page.subsite | first %}
+<body class="theme-subsite subsite-{{ page.subsite }}">
+
+  <header class="site-header subsite-header">
+    <div class="wrap">
+      <div class="subsite-brand">
+        <a class="parent-link" href="{{ '/' | relative_url }}">&larr; {{ site.title }}</a>
+        <a class="site-title" href="{{ subsite.url | relative_url }}">{{ subsite.name }}</a>
+      </div>
+      <nav>
+        <a href="{{ subsite.url | relative_url }}">Home</a>
+        <a href="{{ subsite.url | relative_url }}about/">About</a>
+        <a href="{{ subsite.url | relative_url }}news/">News</a>
+        <a href="{{ subsite.url | relative_url }}gallery/">Gallery</a>
+        <a href="{{ subsite.url | relative_url }}contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+</body>
+</html>

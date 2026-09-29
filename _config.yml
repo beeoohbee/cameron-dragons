@@ -1,0 +1,75 @@
+title: Cameron Dragons
+description: >-
+  Home base for Cameron Dragons booster organizations, with a themed
+  mini-site for each group's news, events, and how to get involved.
+baseurl: ""
+url: ""
+
+# Where to find things
+source: .
+destination: ./_site
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Navigation used in the header (see _layouts/default.html)
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+
+# Booster-club sub-sites are listed in _data/subsites.yml (name, tagline,
+# url) and rendered as a grid on the home page. To add another one:
+#   1. add an entry to _data/subsites.yml
+#   2. add a collection + two `defaults` blocks below (copy an existing pair)
+#   3. add a directory of pages like sports-boosters/ (index/about/news/gallery/contact)
+#   4. add a matching theme override file in assets/css/subsites/
+collections:
+  sports_boosters_posts:
+    output: true
+    permalink: /sports-boosters/news/:year/:month/:day/:title/
+  band_boosters_posts:
+    output: true
+    permalink: /band-boosters/news/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: "sports-boosters"
+    values:
+      layout: "subsite"
+      subsite: "sports-boosters"
+      site_name: "Cameron Sports Boosters Association"
+      extra_css:
+        - /assets/css/subsites/sports-boosters.css
+  - scope:
+      type: "sports_boosters_posts"
+    values:
+      layout: "subsite-post"
+      subsite: "sports-boosters"
+      site_name: "Cameron Sports Boosters Association"
+      extra_css:
+        - /assets/css/subsites/sports-boosters.css
+  - scope:
+      path: "band-boosters"
+    values:
+      layout: "subsite"
+      subsite: "band-boosters"
+      site_name: "Cameron Band Boosters"
+      extra_css:
+        - /assets/css/subsites/band-boosters.css
+  - scope:
+      type: "band_boosters_posts"
+    values:
+      layout: "subsite-post"
+      subsite: "band-boosters"
+      site_name: "Cameron Band Boosters"
+      extra_css:
+        - /assets/css/subsites/band-boosters.css
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
