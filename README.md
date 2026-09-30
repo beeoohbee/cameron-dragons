@@ -46,7 +46,7 @@ _band_boosters_posts/          Band Boosters news posts
    ```
 4. Open http://localhost:4000 in your browser. Changes to files auto-rebuild.
 
-## Add a new news post
+## Add a new news post 
 
 Each sub-site has its own posts folder, e.g. `_sports_boosters_posts/YYYY-MM-DD-your-title.md` or `_band_boosters_posts/YYYY-MM-DD-your-title.md`:
 
