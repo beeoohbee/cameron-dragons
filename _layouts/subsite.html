@@ -13,6 +13,7 @@
       <nav>
         <a href="{{ subsite.url | relative_url }}">Home</a>
         <a href="{{ subsite.url | relative_url }}about/">About</a>
+        {% if site.data.members[page.subsite] %}<a href="{{ subsite.url | relative_url }}members/">Members</a>{% endif %}
         <a href="{{ subsite.url | relative_url }}news/">News</a>
         <a href="{{ subsite.url | relative_url }}gallery/">Gallery</a>
         <a href="{{ subsite.url | relative_url }}contact/">Contact</a>

@@ -1,0 +1,32 @@
+# Cameron Sports Boosters Association members, shown on /sports-boosters/members/.
+# SAMPLE DATA — replace with the real member list.
+#
+# Each tier is listed alphabetically on the page, so order here doesn't matter.
+#   businesses: name, since (year joined), optional url, optional logo
+#               (logo is an image path like /assets/images/sports-boosters/logos/acme.png;
+#               leave it out to show a placeholder box)
+#   individuals: name, since
+
+businesses:
+  - name: Dragon Valley Auto Repair
+    since: 2019
+  - name: Main Street Pizza Co.
+    since: 2021
+  - name: Cameron Family Dental
+    since: 2016
+  - name: Gold Line Hardware
+    since: 2023
+
+individuals:
+  - name: Jordan Alvarez
+    since: 2020
+  - name: Taylor Brooks
+    since: 2018
+  - name: Morgan Chen
+    since: 2024
+  - name: Casey Daniels
+    since: 2015
+  - name: Riley Evans
+    since: 2022
+  - name: Avery Foster
+    since: 2021

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+hide_title: true
 ---
 
 Welcome to **Cameron Dragons** — home base for the Cameron Dragons booster organizations. Pick a group below for their news, events, and how to get involved.

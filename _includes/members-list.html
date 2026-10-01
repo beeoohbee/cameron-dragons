@@ -1,0 +1,38 @@
+{% comment %}
+  Members listing for a sub-site, grouped by tier. Reads
+  _data/members/<page.subsite>.yml (see that file for the fields).
+{% endcomment %}
+{% assign members = site.data.members[page.subsite] %}
+
+{% if members.businesses %}
+<h2>Business members</h2>
+<ul class="member-grid">
+  {% assign businesses = members.businesses | sort: "name" %}
+  {% for m in businesses %}
+  <li class="member-card">
+    {% if m.logo %}
+      <img class="member-logo" src="{{ m.logo | relative_url }}" alt="{{ m.name }} logo">
+    {% else %}
+      <div class="member-logo member-logo-placeholder">Logo</div>
+    {% endif %}
+    <span class="member-name">
+      {% if m.url %}<a href="{{ m.url }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}
+    </span>
+    <span class="member-since">Member since {{ m.since }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if members.individuals %}
+<h2>Individual members</h2>
+<ul class="member-list">
+  {% assign individuals = members.individuals | sort: "name" %}
+  {% for m in individuals %}
+  <li>
+    <span class="member-name">{{ m.name }}</span>
+    <span class="member-since">Member since {{ m.since }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
