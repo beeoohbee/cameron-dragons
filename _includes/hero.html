@@ -1,0 +1,50 @@
+{% comment %}
+  Full-width landing hero, driven by the page's `hero:` front matter
+  (style, image, image_alt, image_fit, title, text, button_text, button_url).
+  Used by both default.html and subsite.html.
+
+  style "split" (default): the image fills the left side and fades into
+  --hero-bg, where the title/text sit on the right. image_fit is "cover"
+  (default; for photos) or "contain" (small/logo art).
+
+  style "centered": the image (e.g. an org's logo) is centered as the page's
+  <h1> — so image_alt should be the org's name — with the text below it.
+{% endcomment %}
+{% assign hero = page.hero %}
+{% if hero.button_text %}
+  {% assign first_char = hero.button_url | slice: 0 %}
+  {% capture hero_button %}<a class="button" href="{% if first_char == '/' %}{{ hero.button_url | relative_url }}{% else %}{{ hero.button_url }}{% endif %}">{{ hero.button_text }}</a>{% endcapture %}
+{% endif %}
+
+{% if hero.style == "centered" %}
+<section class="hero hero-centered">
+  <div class="wrap hero-inner">
+    <h1 class="hero-logo">
+      {% if hero.image %}
+        <img src="{{ hero.image | relative_url }}" alt="{{ hero.image_alt | default: page.site_name }}">
+      {% else %}
+        {{ hero.title | default: page.site_name }}
+      {% endif %}
+    </h1>
+    {{ hero.text | markdownify }}
+    {{ hero_button }}
+  </div>
+</section>
+{% else %}
+<section class="hero">
+  <div class="hero-media hero-media-{{ hero.image_fit | default: 'cover' }}">
+    {% if hero.image %}
+      <img src="{{ hero.image | relative_url }}" alt="{{ hero.image_alt }}">
+    {% else %}
+      <div class="hero-media-placeholder">Image placeholder</div>
+    {% endif %}
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <h1>{{ hero.title | default: page.title }}</h1>
+      {{ hero.text | markdownify }}
+      {{ hero_button }}
+    </div>
+  </div>
+</section>
+{% endif %}

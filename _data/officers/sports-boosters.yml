@@ -1,0 +1,21 @@
+# Cameron Sports Boosters Association officers, shown on /sports-boosters/about/
+# in this order. Fields: name, title, optional photo (an image path like
+# /assets/images/sports-boosters/officers/jamie-berry.jpg — a square crop works
+# best; leave it out to show an initials placeholder).
+
+- name: Brian Bickford
+  title: Past President
+- name: Jamie Berry
+  title: President
+- name: Bob Smith
+  title: President-Elect
+- name: Rachel Lucassen
+  title: Vice President / Social Media Relations
+- name: Courtnee Manz
+  title: Secretary
+- name: Phillip Durbin
+  title: Treasurer
+- name: Amanda Hedgpeth
+  title: Fundraising Chair
+- name: Brittany Simpson
+  title: Booster Liaison

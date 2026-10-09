@@ -1,0 +1,19 @@
+{% comment %}
+  Officer cards for a sub-site: portrait (or an initials placeholder), name,
+  and title. Reads _data/officers/<page.subsite>.yml (see that file).
+{% endcomment %}
+{% assign officers = site.data.officers[page.subsite] %}
+<ul class="officer-grid">
+  {% for o in officers %}
+  <li class="officer-card">
+    {% if o.photo %}
+      <img class="officer-portrait" src="{{ o.photo | relative_url }}" alt="Portrait of {{ o.name }}">
+    {% else %}
+      {% assign words = o.name | split: " " %}
+      <div class="officer-portrait officer-portrait-placeholder" aria-hidden="true">{{ words.first | slice: 0 }}{{ words.last | slice: 0 }}</div>
+    {% endif %}
+    <span class="officer-name">{{ o.name }}</span>
+    <span class="officer-title">{{ o.title }}</span>
+  </li>
+  {% endfor %}
+</ul>
