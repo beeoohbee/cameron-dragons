@@ -1,21 +1,31 @@
+/* Colors and fonts follow the Cameron R-I School District site
+   (cameron.k12.mo.us): bright gold bands, near-black ink, white pages,
+   Paytone One for display titles and Poppins for everything else.
+   Gold is only ever a fill, border or underline — gold text on white is
+   unreadable — so text on a gold fill uses --accent-contrast. */
 :root {
-  --accent: #ffb81c;
-  --accent-contrast: #14110c;
-  --text: #f5f1e6;
-  --muted: #b8ab84;
-  --bg: #14110c;
-  --card-bg: #1f1a10;
-  --border: #3a3020;
+  --accent: #ffc71f;          /* district gold */
+  --accent-strong: #f0b400;   /* gold hover state */
+  --accent-contrast: #010100; /* text on a gold fill */
+  --ink: #010100;             /* district black: headings, header text, footer */
+  --text: #221e1f;
+  --muted: #5c5c5c;
+  --bg: #ffffff;
+  --card-bg: #fafafa;
+  --hero-bg: var(--ink);     /* color the hero image fades into, behind its text */
+  --border: #dddddd;
+  --font-display: "Paytone One", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   color: var(--text);
   background: var(--bg);
-  line-height: 1.6;
+  line-height: 1.65;
   /* Sticky footer: body fills at least the window and main takes up the
      slack, so the footer sits at the bottom on short pages and is pushed
      down normally on long ones. */
@@ -26,14 +36,41 @@ body {
 }
 
 .wrap {
-  max-width: 760px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+h1, h2, h3 {
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+h1 {
+  margin-top: 0;
+  font-family: var(--font-display);
+  font-weight: 400; /* Paytone One has a single, already-heavy weight */
+  font-size: 2.4rem;
+}
+
+h2, h3 { font-weight: 700; }
+
+a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover { text-decoration-color: var(--ink); }
+
+/* Header: the district's gold band with black type */
 .site-header {
-  border-bottom: 2px solid var(--accent);
-  padding: 16px 0;
+  background: var(--accent);
+  color: var(--ink);
+  padding: 20px 0;
 }
 
 .site-header .wrap {
@@ -41,34 +78,43 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px 24px;
 }
 
 .site-title {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--ink);
   text-decoration: none;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
 }
 
 .site-header nav a {
-  margin-left: 16px;
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
   font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
 }
 
-.site-header nav a:first-child { margin-left: 0; }
+.site-header nav a:hover { border-bottom-color: var(--ink); }
 
 main.wrap {
   flex: 1 0 auto;
   width: 100%;
-  padding: 48px 20px 60px;
+  padding: 56px 20px 72px;
 }
 
-h1 { margin-top: 0; }
-
-a { color: var(--accent); }
+/* The column is wide enough for card grids; keep running text to a
+   comfortable line length. */
+main.wrap > p { max-width: 72ch; }
 
 .post-list {
   list-style: none;
@@ -85,41 +131,56 @@ a { color: var(--accent); }
   font-size: 0.9rem;
 }
 
+/* Footer: the district's black band, with a gold rule on top */
 .site-footer {
-  border-top: 1px solid var(--border);
-  padding: 20px 0;
-  color: var(--muted);
+  background: var(--ink);
+  border-top: 4px solid var(--accent);
+  padding: 24px 0;
+  color: #d6d6d6;
   font-size: 0.9rem;
 }
+
+.site-footer p { margin: 0; }
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+  margin-left: 6px;
+}
+
+.site-footer a:hover { text-decoration-color: transparent; }
 
 /* Sub-site hub grid (home page) */
 .subsite-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
-  margin: 24px 0 40px;
+  margin: 28px 0 48px;
 }
 
 .subsite-card {
   display: block;
-  padding: 20px;
+  padding: 22px;
   border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
   border-radius: 8px;
-  background: var(--card-bg);
+  background: var(--bg);
   text-decoration: none;
+  font-weight: 400;
   color: var(--text);
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .subsite-card:hover {
-  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
 }
 
 .subsite-card h2 {
   margin: 0 0 8px;
-  font-size: 1.1rem;
-  color: var(--accent);
+  font-size: 1.15rem;
+  color: var(--ink);
 }
 
 .subsite-card p {
@@ -131,7 +192,7 @@ a { color: var(--accent); }
 /* Sub-site local header: brand + link back to the main site, stacked, plus
    the sub-site's own About/News/Gallery/Contact nav. */
 .subsite-header .wrap {
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .subsite-brand {
@@ -141,14 +202,14 @@ a { color: var(--accent); }
 }
 
 .parent-link {
-  font-size: 0.8rem;
-  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  opacity: 0.75;
   text-decoration: none;
 }
 
-.parent-link:hover {
-  color: var(--accent);
-}
+.parent-link:hover { opacity: 1; }
 
 /* Gallery */
 .gallery-grid {
@@ -185,9 +246,9 @@ a { color: var(--accent); }
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 16px;
-  margin: 16px 0 40px;
+  margin: 16px 0 48px;
 }
 
 .member-card {
@@ -196,8 +257,10 @@ a { color: var(--accent); }
   gap: 4px;
   padding: 16px;
   border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
   border-radius: 8px;
-  background: var(--card-bg);
+  background: var(--bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .member-logo {
@@ -209,7 +272,8 @@ a { color: var(--accent); }
 }
 
 .member-logo-placeholder {
-  border: 1px dashed var(--border);
+  border: 1px dashed #c6c6c6;
+  background: var(--card-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,7 +282,8 @@ a { color: var(--accent); }
 }
 
 .member-card .member-name {
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .member-list {
@@ -240,4 +305,646 @@ a { color: var(--accent); }
 .member-since {
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+/* Home page: placeholder cards for organizations without a sub-site yet */
+.subsite-card-placeholder {
+  border-style: dashed;
+  border-top: 5px solid var(--border);
+  background: var(--card-bg);
+  box-shadow: none;
+}
+
+.subsite-card-placeholder:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.subsite-card-placeholder h2 {
+  color: var(--muted);
+}
+
+.coming-soon {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #ededed;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Home page "Don't see your organization?" — a black band like the
+   district's quick-links strip, with gold for the link */
+.missing-org {
+  padding: 24px 28px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #f0f0f0;
+}
+
+.missing-org h2 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.missing-org p { margin: 0; }
+
+.missing-org a {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.missing-org a:hover { text-decoration-color: transparent; }
+
+/* Main-site contact form (contact.md) */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+  margin-top: 24px;
+}
+
+.contact-form label {
+  margin: 14px 0 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid #c6c6c6;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px var(--accent);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  margin-top: 20px;
+  font: inherit;
+  font-weight: 700;
+  color: var(--accent-contrast);
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.contact-form button:hover { background: var(--accent-strong); }
+
+.contact-form button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Landing hero (home page; see _includes/hero.html). The image covers the
+   left side and a gradient fades it into --hero-bg, where the text sits on
+   the right. On narrow screens the image stacks on top and fades downward. */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 480px;
+  background: var(--hero-bg);
+  color: #f0f0f0;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* "contain" fit: for small or logo-style art that shouldn't be cropped or
+   blown up. The art is pinned to the left edge and the rest of the area is
+   filled with a gradient matching the placeholder dragon art's own gold
+   background (#f8ca2c at the top to #d7a216 at the bottom), so no edge shows. */
+.hero-media-contain {
+  background: linear-gradient(#f8ca2c, #d7a216);
+}
+
+.hero-media-contain img {
+  object-fit: contain;
+  object-position: left center;
+}
+
+.hero-media-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2b2b2b;
+  color: #bdbdbd;
+  font-weight: 600;
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 35%, var(--hero-bg) 95%);
+}
+
+.hero-inner {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-block: 72px;
+}
+
+.hero-text {
+  grid-column: 2;
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin: 0 0 24px;
+}
+
+.hero strong { color: var(--accent); }
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover { background: var(--accent-strong); }
+
+.button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    display: block;
+    min-height: 0;
+  }
+
+  .hero-media {
+    position: relative;
+    width: 100%;
+    height: 260px;
+  }
+
+  .hero-media::after {
+    background: linear-gradient(to bottom, transparent 45%, var(--hero-bg) 100%);
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding-block: 8px 48px;
+  }
+
+  .hero-text { grid-column: 1; }
+}
+
+/* Centered hero variant (hero.style: centered) — an org's logo centered on
+   the hero background, with its text underneath. */
+.hero-centered {
+  display: block;
+  min-height: 0;
+  text-align: center;
+  background: radial-gradient(ellipse at center, #2a2620 0%, var(--hero-bg) 70%);
+}
+
+.hero-centered .hero-inner {
+  display: block;
+  padding-block: 48px 56px;
+}
+
+.hero-logo {
+  margin: 0 auto 20px;
+  font-size: inherit;
+}
+
+.hero-logo img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.hero-centered p {
+  max-width: 60ch;
+  margin: 0 auto 8px;
+}
+
+/* Officers (sub-site about page; see _includes/officers-list.html) */
+.officer-grid {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 20px;
+}
+
+.officer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 16px 20px;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
+  border-radius: 8px;
+  background: var(--bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.officer-portrait {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  margin-bottom: 14px;
+}
+
+.officer-portrait-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 0.02em;
+}
+
+.officer-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.officer-title {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Gallery "what we've funded" page (sports-boosters/gallery.md) */
+.impact-tagline {
+  margin: -8px 0 12px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.impact-grid {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.impact-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.impact-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.impact-card .gallery-placeholder {
+  display: flex;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.impact-body {
+  padding: 14px 16px 18px;
+}
+
+.impact-body h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.impact-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.thank-you-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  padding: 24px 28px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #f0f0f0;
+}
+
+.thank-you-band p { margin: 0; }
+
+.thank-you-heading {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.thank-you-heading::before {
+  content: "\2665";
+  margin-right: 10px;
+}
+
+.impact-closing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px 40px;
+  margin-top: 40px;
+}
+
+.impact-closing p { margin: 0 0 8px; }
+
+.impact-closing-lead,
+.impact-closing-cta {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* Gold words need a dark backing to be readable, so use a gold highlight */
+.impact-closing-lead span,
+.impact-closing-cta span {
+  background: linear-gradient(transparent 55%, var(--accent) 55%);
+}
+
+/* Scholarships section (sports-boosters/activity.md) */
+.scholarships {
+  margin-top: 56px;
+  padding: 28px 28px 24px;
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--accent);
+  border-radius: 8px;
+  background: var(--card-bg);
+}
+
+.scholarships h2 {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.scholarships > p { margin: 0 0 12px; }
+
+.scholarship-requirements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scholarship-requirements li {
+  position: relative;
+  padding: 10px 0 10px 36px;
+  border-top: 1px solid var(--border);
+}
+
+.scholarship-requirements li:first-child { border-top: 0; }
+
+/* Gold check badge in front of each requirement */
+.scholarship-requirements li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 24px;
+  text-align: center;
+}
+
+/* Sports Boosters home: join / why-join section (sports-boosters/index.md) */
+.join-tagline {
+  margin: 0 0 28px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.join-tagline span { color: var(--accent-strong); margin: 0 6px; }
+
+.join-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px 48px;
+  align-items: start;
+}
+
+.join-why h2 {
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+/* Gold words get a highlight behind black text (gold text on white is unreadable) */
+.join-why h2 span {
+  background: linear-gradient(transparent 55%, var(--accent) 55%);
+}
+
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefit-list li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+
+.benefit-list li:first-child { border-top: 0; padding-top: 0; }
+
+.benefit-icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 3px solid var(--accent);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+.benefit-list h3 {
+  margin: 2px 0 2px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.benefit-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.join-card {
+  padding: 24px 24px 28px;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
+  border-radius: 8px;
+  background: var(--bg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.join-card h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.join-qr {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 2px dashed #c6c6c6;
+  border-radius: 8px;
+  image-rendering: pixelated;
+}
+
+.join-scan {
+  margin: 14px 0 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+/* "One team. One community. One Cameron." gold band */
+.one-cameron {
+  margin-top: 56px;
+  padding: 32px 24px 24px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  text-align: center;
+}
+
+.one-cameron p { margin: 0; }
+
+.one-cameron-lead {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.one-cameron-big {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.one-cameron-foot {
+  margin-top: 16px !important;
+  padding-top: 12px;
+  border-top: 2px solid var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .join-grid { grid-template-columns: 1fr; }
 }

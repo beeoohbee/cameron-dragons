@@ -20,7 +20,7 @@ _data/subsites.yml             list of booster clubs (name, tagline, url) — dr
 assets/css/style.css           base styles — black & gold, layout/colors as CSS variables
 assets/css/subsites/*.css      per-sub-site color tweaks, layered on top of the base theme
 
-sports-boosters/               Cameron Sports Boosters Association pages (about/contact/news/gallery)
+sports-boosters/               Cameron Sports Boosters Association pages (about/members/contact/news/activity)
 band-boosters/                 Cameron Band Boosters pages (about/contact/news/gallery)
 _sports_boosters_posts/        Sports Boosters news posts
 _band_boosters_posts/          Band Boosters news posts

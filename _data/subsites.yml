@@ -8,3 +8,22 @@
   short_name: Band Boosters
   tagline: Supporting the Cameron Dragons marching and concert band programs.
   url: /band-boosters/
+  coming_soon: true # sub-site pages are built but not linked from the home page until ready
+# Placeholders: `coming_soon: true` shows an org on the home page grid as a
+# non-clickable "Coming soon" card (even if it has a `url`). Remove it once the
+# sub-site is ready; orgs with no sub-site yet have no `url` at all.
+- key: ag-boosters
+  name: Cameron Ag Boosters
+  short_name: Ag Boosters
+  tagline: Supporting Cameron Dragons agriculture programs.
+  coming_soon: true
+- key: choir-boosters
+  name: Cameron Choir Boosters
+  short_name: Choir Boosters
+  tagline: Supporting the Cameron Dragons choir programs.
+  coming_soon: true
+- key: soccer-club
+  name: Cameron Dragons Soccer Club
+  short_name: Soccer Club
+  tagline: Supporting Cameron Dragons soccer.
+  coming_soon: true

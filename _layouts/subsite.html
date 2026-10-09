@@ -15,14 +15,19 @@
         <a href="{{ subsite.url | relative_url }}about/">About</a>
         {% if site.data.members[page.subsite] %}<a href="{{ subsite.url | relative_url }}members/">Members</a>{% endif %}
         <a href="{{ subsite.url | relative_url }}news/">News</a>
-        <a href="{{ subsite.url | relative_url }}gallery/">Gallery</a>
+        {% comment %} Sub-sites with an activity page link to it in place of the gallery. {% endcomment %}
+        {% assign activity_url = subsite.url | append: "activity/" %}
+        {% assign activity_page = site.pages | where: "url", activity_url | first %}
+        {% if activity_page %}<a href="{{ activity_url | relative_url }}">Activity</a>{% else %}<a href="{{ subsite.url | relative_url }}gallery/">Gallery</a>{% endif %}
         <a href="{{ subsite.url | relative_url }}contact/">Contact</a>
       </nav>
     </div>
   </header>
 
+  {% if page.hero %}{% include hero.html %}{% endif %}
+
   <main class="wrap">
-    <h1>{{ page.title }}</h1>
+    {% unless page.hide_title %}<h1>{{ page.title }}</h1>{% endunless %}
     {{ content }}
   </main>
 

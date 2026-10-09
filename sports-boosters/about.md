@@ -9,7 +9,4 @@ Replace this paragraph with the Cameron Sports Boosters Association's mission st
 
 ### Officers
 
-- **President** — Name
-- **Vice President** — Name
-- **Treasurer** — Name
-- **Secretary** — Name
+{% include officers-list.html %}
