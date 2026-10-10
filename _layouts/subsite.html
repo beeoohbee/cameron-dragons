@@ -14,12 +14,19 @@
         <a href="{{ subsite.url | relative_url }}">Home</a>
         <a href="{{ subsite.url | relative_url }}about/">About</a>
         {% if site.data.members[page.subsite] %}<a href="{{ subsite.url | relative_url }}members/">Members</a>{% endif %}
-        <a href="{{ subsite.url | relative_url }}news/">News</a>
+        {% comment %} Only link News when the sub-site's news page is published. {% endcomment %}
+        {% assign news_url = subsite.url | append: "news/" %}
+        {% assign news_page = site.pages | where: "url", news_url | first %}
+        {% if news_page %}<a href="{{ news_url | relative_url }}">News</a>{% endif %}
         {% comment %} Sub-sites with an activity page link to it in place of the gallery. {% endcomment %}
         {% assign activity_url = subsite.url | append: "activity/" %}
         {% assign activity_page = site.pages | where: "url", activity_url | first %}
         {% if activity_page %}<a href="{{ activity_url | relative_url }}">Activity</a>{% else %}<a href="{{ subsite.url | relative_url }}gallery/">Gallery</a>{% endif %}
         <a href="{{ subsite.url | relative_url }}contact/">Contact</a>
+        {% comment %} Social links (subsites.yml `social:`) as icons at the end of the nav. {% endcomment %}
+        {% for link in subsite.social %}
+        <a class="nav-social" href="{{ link[1] }}" target="_blank" rel="noopener" title="{{ subsite.short_name }} on {{ link[0] | capitalize }}"><i class="fa-brands fa-{{ link[0] }}" aria-hidden="true"></i><span class="visually-hidden">{{ subsite.name }} on {{ link[0] | capitalize }} (opens in a new tab)</span></a>
+        {% endfor %}
       </nav>
     </div>
   </header>

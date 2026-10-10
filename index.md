@@ -12,9 +12,10 @@ hero:
   image_fit: contain
   title: Cameron Dragons
   text: >-
-    Welcome to **Cameron Dragons** — home base for the Cameron Dragons booster
-    organizations. Pick a group below for their news, events, and how to get involved.
-  button_text: Find your booster club
+    Welcome to **Cameron Dragons** — home base for Cameron Dragons organizations,
+    from booster clubs to sports teams and youth programs. Pick a group below for their news, events,
+    and how to get involved.
+  button_text: Find your organization
   button_url: "#organizations"
 ---
 
@@ -26,12 +27,19 @@ hero:
   <div class="subsite-card subsite-card-placeholder">
     <h2>{{ s.name }}</h2>
     <p>{{ s.tagline }}</p>
-    <span class="coming-soon">Coming soon</span>
+    <span class="card-label coming-soon">Coming soon</span>
   </div>
+  {% elsif s.external %}
+  <a class="subsite-card" href="{{ s.external_url | default: s.url }}" target="_blank" rel="noopener">
+    <h2>{{ s.name }}</h2>
+    <p>{{ s.tagline }}</p>
+    <span class="card-label">{{ s.external_label | default: "Visit" }} <span aria-hidden="true">&#8599;</span><span class="visually-hidden">(opens in a new tab)</span></span>
+  </a>
   {% else %}
   <a class="subsite-card" href="{{ s.url | relative_url }}">
     <h2>{{ s.name }}</h2>
     <p>{{ s.tagline }}</p>
+    <span class="card-label">Learn more <span aria-hidden="true">&rarr;</span></span>
   </a>
   {% endif %}
 {% endfor %}

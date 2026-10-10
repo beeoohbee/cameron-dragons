@@ -1,6 +1,10 @@
 ---
 title: News
 permalink: /sports-boosters/news/
+# Hidden for now: not built, and the sub-site nav drops its News link.
+# Delete this line (and set the collection's output back to true in
+# _config.yml) to bring the News page back.
+published: false
 ---
 
 <ul class="post-list">

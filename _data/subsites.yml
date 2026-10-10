@@ -3,12 +3,57 @@
   short_name: Sports Boosters
   tagline: Supporting Cameron Dragons athletics — fundraising, concessions, and game-day volunteers.
   url: /sports-boosters/
+  # Social links: shown as icons in the sub-site header (top right) and on its
+  # contact page. Keys are Font Awesome brand names (facebook, instagram, ...).
+  social:
+    facebook: https://www.facebook.com/share/1CsypZT8Fh/
+# External: no sub-site here — the card links straight to the group's own page
+# (opens in a new tab). `external_label` names where the link goes.
+- key: swim-team
+  name: Cameron Swim Team
+  short_name: Swim Team
+  tagline: News and updates from the Cameron Dragons swim team.
+  url: https://www.facebook.com/share/19atsFm42F/
+  external: true
+  external_label: Facebook
+- key: baseball-association
+  name: Cameron Baseball Association
+  short_name: Baseball Association
+  tagline: News and updates from the Cameron Baseball Association.
+  url: https://www.facebook.com/share/g/1MTQ8epX6d/
+  external: true
+  external_label: Facebook
+- key: youth-football-cheer
+  name: Cameron Youth Football and Cheer
+  short_name: Youth Football and Cheer
+  tagline: News and updates from Cameron Youth Football and Cheer.
+  url: https://www.facebook.com/share/1PRaZxq7Yv/
+  external: true
+  external_label: Facebook
+- key: soccer-club
+  name: Cameron Dragons Soccer Club
+  short_name: Soccer Club
+  tagline: Supporting Cameron Dragons soccer.
+  url: https://www.cameronsoccerclub.com
+  external: true
+  external_label: Website
 - key: band-boosters
   name: Cameron Band Boosters
   short_name: Band Boosters
   tagline: Supporting the Cameron Dragons marching and concert band programs.
+  # `url` stays the sub-site path (its pages build their nav from it); the home
+  # page card links to `external_url` instead until the sub-site is ready.
   url: /band-boosters/
-  coming_soon: true # sub-site pages are built but not linked from the home page until ready
+  external: true
+  external_url: https://www.facebook.com/share/17k9rinkYM/
+  external_label: Facebook
+- key: ptsa
+  name: Cameron PTSA
+  short_name: PTSA
+  tagline: News and updates from the Cameron Parent Teacher Student Association.
+  url: https://www.facebook.com/share/1ErkERE5TR/
+  external: true
+  external_label: Facebook
 # Placeholders: `coming_soon: true` shows an org on the home page grid as a
 # non-clickable "Coming soon" card (even if it has a `url`). Remove it once the
 # sub-site is ready; orgs with no sub-site yet have no `url` at all.
@@ -21,9 +66,4 @@
   name: Cameron Choir Boosters
   short_name: Choir Boosters
   tagline: Supporting the Cameron Dragons choir programs.
-  coming_soon: true
-- key: soccer-club
-  name: Cameron Dragons Soccer Club
-  short_name: Soccer Club
-  tagline: Supporting Cameron Dragons soccer.
   coming_soon: true

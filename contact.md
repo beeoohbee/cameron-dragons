@@ -4,7 +4,7 @@ title: Contact
 permalink: /contact/
 ---
 
-Have a question, or think a booster organization is missing from the site? Send us a message.
+Have a question, or think an organization is missing from the site? Send us a message.
 
 <form class="contact-form" id="contact-form" data-to="beeohbee@gmail.com">
   <label for="cf-name">Name</label>

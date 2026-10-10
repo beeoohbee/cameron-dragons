@@ -1,7 +1,7 @@
 title: Cameron Dragons
 description: >-
-  Home base for Cameron Dragons booster organizations, with a themed
-  mini-site for each group's news, events, and how to get involved.
+  Home base for Cameron Dragons organizations — booster clubs, sports teams,
+  and youth programs — with news, events, and how to get involved with each group.
 baseurl: ""
 url: ""
 
@@ -28,7 +28,7 @@ nav:
 #   4. add a matching theme override file in assets/css/subsites/
 collections:
   sports_boosters_posts:
-    output: true
+    output: false # news hidden for Sports Boosters (see sports-boosters/news.md)
     permalink: /sports-boosters/news/:year/:month/:day/:title/
   band_boosters_posts:
     output: true
