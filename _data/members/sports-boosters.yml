@@ -18,15 +18,31 @@ tiers:
   - name: Gold Business Members
     logos: true
     members:
-      - name: Jerri Ann Arnold
       - name: BTC Bank
-      - name: Jade Bland
+        logo: /assets/images/sports-boosters/logos/btc-bank.svg
+        url: https://btcbank.bank
+      - name: C L Bland Farms LLC – Jade Bland
+        logo: /assets/images/sports-boosters/logos/cl-bland-farms.jpg
       - name: Cameron Regional YMCA
+        logo: /assets/images/sports-boosters/logos/ymca.png
+        url: https://www.moymca.org/locations/cameron-regional-ymca
       - name: CR Seeds and Services, LLC
+        logo: /assets/images/sports-boosters/logos/cr-seeds.png
+        url: https://crseedsandservices.com
       - name: Generational Wealth Development
+        logo: /assets/images/sports-boosters/logos/generational-wealth-development.png
+        url: https://gwdadvice.com
       - name: Dallas Lockridge
+        logo: /assets/images/sports-boosters/logos/dallas-lockridge-insurance.jpg # Dallas Lockridge Insurance (matches his sign-up address/phone)
+        url: https://dallaslockridgeinsurance.com
       - name: RE/MAX Partners – Dan & Staci Earley
+        logo: /assets/images/sports-boosters/logos/remax.svg
       - name: Rotary
+        logo: /assets/images/sports-boosters/logos/rotary.svg
+        url: https://rotary6040.org/clubinfo/cameron/
+      - name: Suite Stylz by Designers Touch – Jerri Ann Arnold
+        logo: /assets/images/sports-boosters/logos/suite-stylz.jpg
+        url: https://www.facebook.com/designerstouchhairsalon/
 
   - name: Silver Family Members
     members:
