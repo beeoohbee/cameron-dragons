@@ -1,14 +1,14 @@
 {% comment %}
-  Members listing for a sub-site, grouped by tier. Reads
+  Members listing for a sub-site, grouped by tier in the order given. Reads
   _data/members/<page.subsite>.yml (see that file for the fields).
 {% endcomment %}
 {% assign members = site.data.members[page.subsite] %}
 
-{% if members.businesses %}
-<h2>Business members</h2>
+{% for tier in members.tiers %}
+<h2>{{ tier.name }}</h2>
+{% if tier.logos %}
 <ul class="member-grid">
-  {% assign businesses = members.businesses | sort: "name" %}
-  {% for m in businesses %}
+  {% for m in tier.members %}
   <li class="member-card">
     {% if m.logo %}
       <img class="member-logo" src="{{ m.logo | relative_url }}" alt="{{ m.name }} logo">
@@ -16,23 +16,20 @@
       <div class="member-logo member-logo-placeholder">Logo</div>
     {% endif %}
     <span class="member-name">
-      {% if m.url %}<a href="{{ m.url }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}
+      {% if m.url %}<a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}
     </span>
-    <span class="member-since">Member since {{ m.since }}</span>
   </li>
+  {% endfor %}
+</ul>
+{% else %}
+<ul class="member-list">
+  {% for m in tier.members %}
+  <li>{{ m.name }}</li>
   {% endfor %}
 </ul>
 {% endif %}
+{% endfor %}
 
-{% if members.individuals %}
-<h2>Individual members</h2>
-<ul class="member-list">
-  {% assign individuals = members.individuals | sort: "name" %}
-  {% for m in individuals %}
-  <li>
-    <span class="member-name">{{ m.name }}</span>
-    <span class="member-since">Member since {{ m.since }}</span>
-  </li>
-  {% endfor %}
-</ul>
+{% if members.student_athlete_count > 0 %}
+<p class="member-note">Plus {{ members.student_athlete_count }} student-athlete members — thank you for supporting your own teams!</p>
 {% endif %}

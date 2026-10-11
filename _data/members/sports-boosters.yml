@@ -1,32 +1,73 @@
-# Cameron Sports Boosters Association members, shown on /sports-boosters/members/.
-# SAMPLE DATA — replace with the real member list.
+# Cameron Sports Boosters Association members, shown on /sports-boosters/members/
+# grouped by membership tier, in the order listed here (alphabetical by last
+# name / business name).
 #
-# Each tier is listed alphabetically on the page, so order here doesn't matter.
-#   businesses: name, since (year joined), optional url, optional logo
-#               (logo is an image path like /assets/images/sports-boosters/logos/acme.png;
-#               leave it out to show a placeholder box)
-#   individuals: name, since
+# PUBLIC: this file is published and lives in a public repo — names only.
+# Never add addresses, emails, phone numbers, payment notes, or student
+# athletes' names here.
+#
+# Each tier: name, optional `logos: true` (shows cards with a logo box — used for
+# businesses), and members. Each member: name, plus for logo tiers an optional
+# logo (an image path like /assets/images/sports-boosters/logos/btc-bank.png;
+# leave it out to show a placeholder box) and url (their website).
+#
+# student_athlete_count: student-athlete memberships ($10) are counted, not named,
+# since they're minors.
 
-businesses:
-  - name: Dragon Valley Auto Repair
-    since: 2019
-  - name: Main Street Pizza Co.
-    since: 2021
-  - name: Cameron Family Dental
-    since: 2016
-  - name: Gold Line Hardware
-    since: 2023
+tiers:
+  - name: Gold Business Members
+    logos: true
+    members:
+      - name: Jerri Ann Arnold
+      - name: BTC Bank
+      - name: Jade Bland
+      - name: Cameron Regional YMCA
+      - name: CR Seeds and Services, LLC
+      - name: Generational Wealth Development
+      - name: Dallas Lockridge
+      - name: RE/MAX Partners – Dan & Staci Earley
+      - name: Rotary
 
-individuals:
-  - name: Jordan Alvarez
-    since: 2020
-  - name: Taylor Brooks
-    since: 2018
-  - name: Morgan Chen
-    since: 2024
-  - name: Casey Daniels
-    since: 2015
-  - name: Riley Evans
-    since: 2022
-  - name: Avery Foster
-    since: 2021
+  - name: Silver Family Members
+    members:
+      - name: Jamie Enloe
+      - name: Caitlin Erdman
+      - name: Don & Karen Feighert
+      - name: Jenna Hovey
+      - name: John & Ashley Leazenby
+      - name: The McClard Family
+      - name: Jaci Riddell
+      - name: Richard & Nancy Riddell
+      - name: Brian & Bridget Robinson
+      - name: Roxanne & Darrell Rooney
+      - name: Andy & Amy Schroeder
+      - name: Chad & Morgan Scott
+      - name: Robert Smith
+
+  - name: Bronze Individual Members
+    members:
+      - name: Taylor Allen
+      - name: Susan Barnes
+      - name: Mary Jo Eiberger
+      - name: Debbie Foster
+      - name: Maria Horvatin
+      - name: Kay Leeper
+      - name: Courtnee Manz
+      - name: Rebecca Neuhalfen
+      - name: Angie Ormsby
+      - name: Ashley Pittsenbarger
+      - name: Brooke Robinson
+      - name: Kristin Slatten
+      - name: Beth Strzyzewski
+
+  - name: CHS Coaches & Families
+    members:
+      - name: Jamie Berry
+      - name: Adrienne Bickford
+      - name: Felicia Limb
+      - name: Ryan Madison
+      - name: Justin & Brittany Simpson
+      - name: Cierra Sugden
+      - name: Craig Trussell
+
+student_athlete_count: 12

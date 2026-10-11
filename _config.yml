@@ -3,7 +3,7 @@ description: >-
   Home base for Cameron Dragons organizations — booster clubs, sports teams,
   and youth programs — with news, events, and how to get involved with each group.
 baseurl: ""
-url: ""
+url: "https://camerondragons.com"
 
 # Where to find things
 source: .

@@ -291,22 +291,20 @@ main.wrap > p { max-width: 72ch; }
 .member-list {
   list-style: none;
   padding: 0;
-  margin: 16px 0 0;
+  margin: 12px 0 40px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 0 24px;
 }
 
 .member-list li {
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0;
+  padding: 9px 0;
   border-bottom: 1px solid var(--border);
 }
 
-.member-since {
+.member-note {
   color: var(--muted);
-  font-size: 0.85rem;
+  font-style: italic;
 }
 
 /* Home page: placeholder cards for organizations without a sub-site yet */
@@ -688,7 +686,10 @@ main.wrap > p { max-width: 72ch; }
 }
 
 .impact-body {
-  padding: 14px 16px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px 14px;
 }
 
 .impact-body h3 {
@@ -1015,4 +1016,20 @@ main.wrap > p { max-width: 72ch; }
   width: 1.4em;
   text-align: center;
   color: var(--ink);
+}
+
+/* Stock photo credit, pinned to the bottom of its Activity card (required by
+   most CC licenses). Cards in a row are equal height, so credits line up. */
+.impact-body .photo-credit {
+  margin-top: auto;
+  padding-top: 12px;
+  font-size: 0.65rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.impact-body .photo-credit a {
+  font-weight: 400;
+  color: inherit;
+  text-decoration-thickness: 1px;
 }
