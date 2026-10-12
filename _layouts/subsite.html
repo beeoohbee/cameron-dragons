@@ -23,6 +23,9 @@
         {% assign activity_page = site.pages | where: "url", activity_url | first %}
         {% if activity_page %}<a href="{{ activity_url | relative_url }}">Activity</a>{% else %}<a href="{{ subsite.url | relative_url }}gallery/">Gallery</a>{% endif %}
         <a href="{{ subsite.url | relative_url }}contact/">Contact</a>
+        {% assign join_url = subsite.url | append: "join/" %}
+        {% assign join_page = site.pages | where: "url", join_url | first %}
+        {% if join_page %}<a class="nav-join" href="{{ join_url | relative_url }}">Join</a>{% endif %}
         {% comment %} Social links (subsites.yml `social:`) as icons at the end of the nav. {% endcomment %}
         {% for link in subsite.social %}
         <a class="nav-social" href="{{ link[1] }}" target="_blank" rel="noopener" title="{{ subsite.short_name }} on {{ link[0] | capitalize }}"><i class="fa-brands fa-{{ link[0] }}" aria-hidden="true"></i><span class="visually-hidden">{{ subsite.name }} on {{ link[0] | capitalize }} (opens in a new tab)</span></a>

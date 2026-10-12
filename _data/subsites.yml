@@ -7,6 +7,12 @@
   # contact page. Keys are Font Awesome brand names (facebook, instagram, ...).
   social:
     facebook: https://www.facebook.com/share/1CsypZT8Fh/
+  # Membership sign-up form (Google Form) — used by the home page and Join page.
+  # assets/images/sports-boosters/join-qr.png encodes this same link; if the
+  # form changes, regenerate the QR image too.
+  join_form: https://forms.gle/HV1YkKri88tHM5Wf6
+  # Venmo handle (no @) for dues and donations — powers the Donate buttons.
+  venmo: CameronSportsBoosters
 # External: no sub-site here — the card links straight to the group's own page
 # (opens in a new tab). `external_label` names where the link goes.
 - key: swim-team

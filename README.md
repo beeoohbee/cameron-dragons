@@ -15,11 +15,14 @@ It's a [Jekyll](https://jekyllrb.com) static site styled after the Cameron R-I S
 - **Home** — the club logo, the "Join today!" section with the membership QR code and form link, and the "One Cameron" band.
 - **About** — the club's mission and officer cards.
 - **Members** — members grouped by tier (Gold Business, Silver Family, Bronze Individual, Coaches & Families).
+- **Join** — membership levels and prices, the sign-up form (with QR code), ways to pay, and a Donate (Venmo) button.
 - **Activity** — what the club has funded (photo cards) and scholarship requirements.
 - **Contact** — club email and Facebook.
 - News is built but hidden for now (see `sports-boosters/news.md`).
 
-**Cameron Band Boosters** (`band-boosters/`) — placeholder pages, not linked anywhere yet; the home page card points to the band's Facebook page instead.
+**Cameron Band Boosters** (`band-boosters/`) — placeholder pages, **not published** (listed under `exclude:` in `_config.yml`); the home page card points to the band's Facebook page instead.
+
+**404 page** (`404.html`) — shown for any address that doesn't exist.
 
 ## Common edits
 
@@ -32,7 +35,8 @@ It's a [Jekyll](https://jekyllrb.com) static site styled after the Cameron R-I S
 | Activity cards and photos | front matter at the top of `sports-boosters/activity.md` |
 | Sports Boosters email | `sports-boosters/contact.md` |
 | Sports Boosters Facebook link / social icons | `social:` on the `sports-boosters` entry in `_data/subsites.yml` |
-| Membership form link | `join_form:` in `sports-boosters/index.md` (regenerate `assets/images/sports-boosters/join-qr.png` too) |
+| Membership form link, Venmo handle | `join_form:` / `venmo:` on the `sports-boosters` entry in `_data/subsites.yml` (regenerate `assets/images/sports-boosters/join-qr.png` if the form changes) |
+| Membership levels and prices | front matter at the top of `sports-boosters/join.md` |
 | Colors and fonts | the variables at the top of `assets/css/style.css` |
 | Site address, description, top menu | `_config.yml` |
 
@@ -77,6 +81,8 @@ The repository is public, so `_data/members/sports-boosters.yml` holds **member 
 4. Open http://localhost:4000 in your browser. Changes to files rebuild automatically (changes to `_config.yml` need a restart).
 
 If pages were renamed or removed, run `bundle exec jekyll clean` first so old copies don't linger.
+
+**Dropbox note:** this folder lives in Dropbox, which can sync stale copies back into the generated `_site/` folder and make local previews look out of date. If a preview looks wrong, build somewhere outside Dropbox (`bundle exec jekyll serve -d /tmp/cameron-site`). The live site isn't affected — GitHub builds it from scratch.
 
 ## Publishing
 

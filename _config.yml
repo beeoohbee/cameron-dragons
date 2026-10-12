@@ -19,6 +19,8 @@ nav:
     url: /
   - title: About
     url: /about/
+  - title: Contact
+    url: /contact/
 
 # Booster-club sub-sites are listed in _data/subsites.yml (name, tagline,
 # url) and rendered as a grid on the home page. To add another one:
@@ -31,7 +33,7 @@ collections:
     output: false # news hidden for Sports Boosters (see sports-boosters/news.md)
     permalink: /sports-boosters/news/:year/:month/:day/:title/
   band_boosters_posts:
-    output: true
+    output: false # Band Boosters hidden until ready (see exclude: below)
     permalink: /band-boosters/news/:year/:month/:day/:title/
 
 defaults:
@@ -69,6 +71,10 @@ defaults:
         - /assets/css/subsites/band-boosters.css
 
 exclude:
+  # Band Boosters sub-site is hidden until it has real content — its home page
+  # card links to the band's Facebook page instead. Remove this line (and set
+  # band_boosters_posts output back to true) to publish it.
+  - band-boosters
   - README.md
   - CLAUDE.md
   - Gemfile

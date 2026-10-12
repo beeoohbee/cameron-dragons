@@ -83,7 +83,7 @@ Thanks to the support of our Dragon Family, the Booster Club has been able to fu
   {% for item in page.impact %}
   <li class="impact-card">
     {% if item.photo %}
-      <img class="impact-photo" src="{{ item.photo | relative_url }}" alt="{{ item.title }}">
+      <img class="impact-photo" src="{{ item.photo | relative_url }}" alt="{{ item.title }}" loading="lazy" decoding="async">
     {% else %}
       <div class="impact-photo gallery-placeholder">Photo</div>
     {% endif %}
@@ -107,7 +107,7 @@ Thanks to the support of our Dragon Family, the Booster Club has been able to fu
   <p class="impact-closing-lead">Together, we build <span>champions</span> on and off the field!</p>
   <div>
     <p class="impact-closing-cta">Join. Donate. Support.<br><span>Be part of the Dragon legacy!</span></p>
-    <p>Contact any Booster Club member or visit us at a home event! You can also <a href="{{ '/sports-boosters/contact/' | relative_url }}">get in touch</a> or see our <a href="{{ '/sports-boosters/members/' | relative_url }}">members</a>.</p>
+    <p>Contact any Booster Club member or visit us at a home event! You can also <a href="{{ '/sports-boosters/join/' | relative_url }}">become a member</a>, <a href="https://venmo.com/u/CameronSportsBoosters" target="_blank" rel="noopener">donate</a>, or see our <a href="{{ '/sports-boosters/members/' | relative_url }}">members</a>.</p>
   </div>
 </div>
 

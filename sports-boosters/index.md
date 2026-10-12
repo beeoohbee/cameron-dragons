@@ -9,10 +9,8 @@ hero:
   image: /assets/images/sports-boosters/logo.png
   image_alt: Cameron Sports Boosters Association
   text: Supporting Cameron Dragons athletics — fundraising, concessions, and game-day volunteers.
-# Membership sign-up form (Google Form). join-qr.png encodes this same link —
-# if the form changes, regenerate the QR image too.
-join_form: https://forms.gle/HV1YkKri88tHM5Wf6
 ---
+{% assign subsite = site.data.subsites | where: "key", page.subsite | first %}
 
 <section class="join-section">
   <p class="join-tagline">Support today. <span aria-hidden="true">&#9733;</span> Impact tomorrow.</p>
@@ -53,12 +51,18 @@ join_form: https://forms.gle/HV1YkKri88tHM5Wf6
 
     <div class="join-card">
       <h2>Join today!</h2>
-      <img class="join-qr" src="{{ '/assets/images/sports-boosters/join-qr.png' | relative_url }}" alt="QR code linking to the Booster Club membership form">
+      <img class="join-qr" src="{{ '/assets/images/sports-boosters/join-qr.png' | relative_url }}" alt="QR code linking to the Booster Club membership form" loading="lazy" decoding="async">
       <p class="join-scan">Scan to join and support Cameron Athletics!</p>
-      <a class="button" href="{{ page.join_form }}">Join online</a>
+      <div class="button-row">
+        <a class="button" href="{{ subsite.join_form }}" target="_blank" rel="noopener">Join online</a>
+        {% include donate-button.html %}
+      </div>
+      <p class="join-levels"><a href="{{ subsite.url | relative_url }}join/">See membership levels &amp; ways to pay</a></p>
     </div>
   </div>
 </section>
+
+{% include sponsor-strip.html %}
 
 <section class="one-cameron">
   <p class="one-cameron-lead">One team. One community.</p>

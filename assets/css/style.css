@@ -1036,3 +1036,173 @@ main.wrap > p { max-width: 72ch; }
   color: inherit;
   text-decoration-thickness: 1px;
 }
+
+/* Buttons: a row of them, and a black variant (e.g. Donate) */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-dark {
+  background: var(--ink);
+  color: var(--accent);
+}
+
+.button-dark:hover { background: #2a2a2a; }
+
+.button i { margin-right: 4px; }
+
+.join-levels {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+}
+
+/* Sub-site nav: Join as a pill so it stands out */
+.site-header nav a.nav-join {
+  padding: 2px 12px;
+  border-radius: 999px;
+  border-bottom: 0;
+  background: var(--ink);
+  color: var(--accent);
+}
+
+.site-header nav a.nav-join:hover { background: #2a2a2a; }
+
+/* Sponsor logo strip (_includes/sponsor-strip.html) */
+.sponsor-strip {
+  margin-top: 56px;
+  text-align: center;
+}
+
+.sponsor-strip h2 {
+  margin: 0 0 18px;
+  font-size: 1.3rem;
+}
+
+.sponsor-strip ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 14px;
+}
+
+.sponsor-strip li a,
+.sponsor-strip li > img {
+  display: block;
+}
+
+.sponsor-strip img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.sponsor-strip a:hover img {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.sponsor-strip p { margin: 16px 0 0; font-size: 0.9rem; }
+
+/* Join page (sports-boosters/join.md) */
+.level-grid {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+}
+
+.level-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
+  border-radius: 8px;
+  background: var(--bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.level-card h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.level-price {
+  margin: 6px 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.level-card p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.join-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.join-step {
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+}
+
+.join-step h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 1rem;
+}
+
+.join-step .join-qr { margin: 14px 0; max-width: 180px; }
+
+.donate-callout {
+  margin-bottom: 32px;
+  padding: 24px 28px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.donate-callout h2 { margin: 0 0 4px; color: #ffffff; font-size: 1.3rem; }
+.donate-callout p { margin: 0 0 16px; }
+.donate-callout .button-dark { background: var(--accent); color: var(--accent-contrast); }
+.donate-callout .button-dark:hover { background: var(--accent-strong); }
+
+/* 404 page */
+.not-found-lead { font-size: 1.15rem; }
+.not-found-lead + .button-row { justify-content: flex-start; margin: 24px 0; }

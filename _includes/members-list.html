@@ -11,7 +11,7 @@
   {% for m in tier.members %}
   <li class="member-card">
     {% if m.logo %}
-      <img class="member-logo" src="{{ m.logo | relative_url }}" alt="{{ m.name }} logo">
+      <img class="member-logo" src="{{ m.logo | relative_url }}" alt="{{ m.name }} logo" loading="lazy" decoding="async">
     {% else %}
       <div class="member-logo member-logo-placeholder">Logo</div>
     {% endif %}

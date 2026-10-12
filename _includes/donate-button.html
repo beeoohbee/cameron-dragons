@@ -1,0 +1,8 @@
+{% comment %}
+  "Donate" button linking to the current sub-site's Venmo profile
+  (subsites.yml `venmo:`). Renders nothing if the sub-site has no Venmo handle.
+{% endcomment %}
+{% assign donate_subsite = site.data.subsites | where: "key", page.subsite | first %}
+{% if donate_subsite.venmo %}
+<a class="button button-dark" href="https://venmo.com/u/{{ donate_subsite.venmo }}" target="_blank" rel="noopener"><i class="fa-solid fa-heart" aria-hidden="true"></i> Donate<span class="visually-hidden"> via Venmo (opens in a new tab)</span></a>
+{% endif %}

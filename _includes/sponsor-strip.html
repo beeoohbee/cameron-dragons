@@ -1,0 +1,23 @@
+{% comment %}
+  Logo strip thanking a sub-site's logo-tier members (the members-data tier
+  with `logos: true`, e.g. Gold Business Members). Members without a logo are
+  skipped. Reads _data/members/<page.subsite>.yml.
+{% endcomment %}
+{% assign strip_members = site.data.members[page.subsite] %}
+{% assign strip_subsite = site.data.subsites | where: "key", page.subsite | first %}
+{% assign strip_tier = strip_members.tiers | where: "logos", true | first %}
+{% if strip_tier %}
+<section class="sponsor-strip">
+  <h2>Thank you to our {{ strip_tier.name }}</h2>
+  <ul>
+    {% for m in strip_tier.members %}{% if m.logo %}
+    <li>
+      {% if m.url %}<a href="{{ m.url }}" target="_blank" rel="noopener" title="{{ m.name }}">{% endif %}
+      <img src="{{ m.logo | relative_url }}" alt="{{ m.name }}" loading="lazy" decoding="async">
+      {% if m.url %}</a>{% endif %}
+    </li>
+    {% endif %}{% endfor %}
+  </ul>
+  <p><a href="{{ strip_subsite.url | relative_url }}members/">See all members</a></p>
+</section>
+{% endif %}

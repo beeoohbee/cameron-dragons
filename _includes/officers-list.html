@@ -7,7 +7,7 @@
   {% for o in officers %}
   <li class="officer-card">
     {% if o.photo %}
-      <img class="officer-portrait" src="{{ o.photo | relative_url }}" alt="Portrait of {{ o.name }}">
+      <img class="officer-portrait" src="{{ o.photo | relative_url }}" alt="Portrait of {{ o.name }}" loading="lazy" decoding="async">
     {% else %}
       {% assign words = o.name | split: " " %}
       <div class="officer-portrait officer-portrait-placeholder" aria-hidden="true">{{ words.first | slice: 0 }}{{ words.last | slice: 0 }}</div>
