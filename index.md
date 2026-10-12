@@ -29,18 +29,29 @@ hero:
     <p>{{ s.tagline }}</p>
     <span class="card-label coming-soon">Coming soon</span>
   </div>
-  {% elsif s.external %}
-  <a class="subsite-card" href="{{ s.external_url | default: s.url }}" target="_blank" rel="noopener">
-    <h2>{{ s.name }}</h2>
-    <p>{{ s.tagline }}</p>
-    <span class="card-label">{{ s.external_label | default: "Visit" }} <span aria-hidden="true">&#8599;</span><span class="visually-hidden">(opens in a new tab)</span></span>
-  </a>
   {% else %}
-  <a class="subsite-card" href="{{ s.url | relative_url }}">
-    <h2>{{ s.name }}</h2>
+  {% comment %}
+    The org name is the card's main link, stretched over the whole card (see
+    .card-main-link in style.css). Extra links, like a sub-site's Facebook
+    page, sit above it as their own label pills.
+  {% endcomment %}
+  {% if s.external %}
+    {% assign main_url = s.external_url | default: s.url %}
+    {% assign main_label = s.external_label | default: "Website" %}
+  {% else %}
+    {% assign main_url = s.url | relative_url %}
+    {% assign main_label = "Website" %}
+  {% endif %}
+  <div class="subsite-card">
+    <h2><a class="card-main-link" href="{{ main_url }}"{% if s.external %} target="_blank" rel="noopener"{% endif %}>{{ s.name }}{% if s.external %}<span class="visually-hidden"> on {{ main_label }} (opens in a new tab)</span>{% endif %}</a></h2>
     <p>{{ s.tagline }}</p>
-    <span class="card-label">Learn more <span aria-hidden="true">&rarr;</span></span>
-  </a>
+    <div class="card-labels">
+      <span class="card-label" aria-hidden="true">{% include card-icon.html label=main_label %} {{ main_label }} {% if s.external %}&#8599;{% else %}&rarr;{% endif %}</span>
+      {% unless s.external %}{% for link in s.social %}{% assign network = link[0] %}
+      <a class="card-label card-label-link" href="{{ link[1] }}" target="_blank" rel="noopener">{% include card-icon.html label=network %} {{ network | capitalize }} <span aria-hidden="true">&#8599;</span><span class="visually-hidden"> — {{ s.name }} (opens in a new tab)</span></a>
+      {% endfor %}{% endunless %}
+    </div>
+  </div>
   {% endif %}
 {% endfor %}
 </div>

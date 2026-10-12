@@ -1,0 +1,14 @@
+{% comment %}
+  Font Awesome icon for a home-page card label. Pass label= the label text or
+  a social network name (Facebook, Instagram, ...). Brand names get their
+  logo; anything else gets a globe.
+{% endcomment %}
+{% assign icon_key = include.label | downcase %}
+{% case icon_key %}
+  {% when "facebook" %}<i class="fa-brands fa-facebook" aria-hidden="true"></i>
+  {% when "instagram" %}<i class="fa-brands fa-instagram" aria-hidden="true"></i>
+  {% when "x", "twitter" %}<i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+  {% when "youtube" %}<i class="fa-brands fa-youtube" aria-hidden="true"></i>
+  {% when "tiktok" %}<i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+  {% else %}<i class="fa-solid fa-globe" aria-hidden="true"></i>
+{% endcase %}

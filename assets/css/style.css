@@ -160,6 +160,7 @@ main.wrap > p { max-width: 72ch; }
 }
 
 .subsite-card {
+  position: relative; /* anchor for the stretched .card-main-link */
   display: flex;
   flex-direction: column;
   padding: 22px;
@@ -1206,3 +1207,49 @@ main.wrap > p { max-width: 72ch; }
 /* 404 page */
 .not-found-lead { font-size: 1.15rem; }
 .not-found-lead + .button-row { justify-content: flex-start; margin: 24px 0; }
+
+/* Home page cards: the org name link is stretched over the whole card so the
+   card stays clickable; extra label links (e.g. Facebook) sit above it. */
+.card-main-link {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.card-main-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+
+.subsite-card:focus-within {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.card-main-link:focus { outline: none; }
+
+.card-labels {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.card-labels .card-label {
+  margin-top: 0;
+  padding: 4px 11px;
+}
+
+.card-label i { margin-right: 3px; }
+
+.card-label-link {
+  position: relative;
+  z-index: 1; /* above the stretched main link */
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.card-label-link:hover { background: #2a2a2a; }
