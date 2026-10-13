@@ -7,6 +7,7 @@
   # contact page. Keys are Font Awesome brand names (facebook, instagram, ...).
   social:
     facebook: https://www.facebook.com/share/1CsypZT8Fh/
+    instagram: https://www.instagram.com/cameronsportsbooster
   # Membership sign-up form (Google Form) — used by the home page and Join page.
   # assets/images/sports-boosters/join-qr.png encodes this same link; if the
   # form changes, regenerate the QR image too.

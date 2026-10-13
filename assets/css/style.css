@@ -762,7 +762,7 @@ main.wrap > p { max-width: 72ch; }
 
 /* Scholarships section (sports-boosters/activity.md) */
 .scholarships {
-  margin-top: 56px;
+  margin-top: 0;
   padding: 28px 28px 24px;
   border: 1px solid var(--border);
   border-left: 6px solid var(--accent);
@@ -1253,3 +1253,26 @@ main.wrap > p { max-width: 72ch; }
 }
 
 .card-label-link:hover { background: #2a2a2a; }
+
+/* Activity page top: intro on the left, Scholarships panel on the right */
+.activity-top {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 24px 36px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.activity-intro .impact-tagline { margin-top: 0; }
+
+.activity-top .scholarships { padding: 20px 22px 16px; }
+
+.activity-top .scholarships h2 { font-size: 1.5rem; }
+
+.activity-top .scholarships > p { font-size: 0.95rem; }
+
+.activity-top .scholarship-requirements li { font-size: 0.92rem; }
+
+@media (max-width: 760px) {
+  .activity-top { grid-template-columns: 1fr; }
+}

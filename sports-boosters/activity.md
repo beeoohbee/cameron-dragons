@@ -36,16 +36,15 @@ impact:
     credit: "Don Williams"
     credit_url: https://commons.wikimedia.org/wiki/File:High_peak_frame_tent.JPG
     license: "Public domain"
+  - title: Tennis Tent # new — confirm title/caption
+    caption: Shade and a home base for our tennis team at matches.
+    photo: /assets/images/sports-boosters/activity/tennis-tent.jpg
   - title: Dragon Suit
     caption: Bringing our Dragon spirit to life!
     photo: /assets/images/sports-boosters/activity/dragon-suit.jpg # our own mascot photo, lifted onto a white-to-gold backdrop
   - title: Athletic Trainer Equipment
     caption: Helping keep our athletes safe and performing their best.
-    photo: /assets/images/sports-boosters/activity/trainer-equipment.jpg
-    credit: "Talento Tec"
-    credit_url: https://commons.wikimedia.org/wiki/File:03042012Ccm_gamosuma_juvenilA232.JPG
-    license: "CC BY-SA 3.0"
-    license_url: https://creativecommons.org/licenses/by-sa/3.0
+    photo: /assets/images/sports-boosters/activity/athletic-trainer-stuffs.jpg
   - title: Banquet Meals
     caption: Celebrating our athletes and their hard work.
     photo: /assets/images/sports-boosters/activity/banquet-meals.jpg
@@ -73,11 +72,39 @@ impact:
     license_url: https://creativecommons.org/licenses/by-sa/4.0
   - title: District Bags
     caption: Providing food and drink for our teams during district competition.
+    photo: /assets/images/sports-boosters/activity/district-bags.jpg
+  # New cards from the club's own photos — confirm titles/captions.
+  - title: Sports Boosters Trailer
+    caption: Bringing Dragons spirit, gear, and game-day support to events.
+    photo: /assets/images/sports-boosters/activity/dragon-trailer.jpg
+  - title: Dugout Logo
+    caption: Putting the Cameron "C" on our ballfield dugouts.
+    photo: /assets/images/sports-boosters/activity/dugout-c.jpg
+  - title: Soccer Goals
+    caption: New goals for Cameron Dragons soccer practices.
+    photo: /assets/images/sports-boosters/activity/soccer-goals.jpg
+  - title: Softball Fence Cups
+    caption: Spelling out DRAGONS on the softball field fence.
+    photo: /assets/images/sports-boosters/activity/softball-field-fence-cups.jpg
 ---
 
-<p class="impact-tagline">Making an impact. Supporting our Dragons!</p>
+<div class="activity-top">
+  <div class="activity-intro">
+    <p class="impact-tagline">Making an impact. Supporting our Dragons!</p>
+    <p>Thanks to the support of our Dragon Family, the Booster Club has been able to fund and provide everything below — plus scholarships for our graduating senior athletes.</p>
+  </div>
 
-Thanks to the support of our Dragon Family, the Booster Club has been able to fund and provide:
+  <section class="scholarships" id="scholarships">
+    <h2>Scholarships</h2>
+    <p>The Booster Club awards scholarships to graduating senior athletes. To be eligible:</p>
+    <ul class="scholarship-requirements">
+      <li>Must be an Athletics Booster Club member for 2 years, with one being your senior year.</li>
+      <li>Must be an Athletics Booster Club member by December 31st of your senior year.</li>
+      <li>Must participate in 4 MSHSAA approved seasons in your high school career.</li>
+      <li>Once you meet the requirements above, you must submit a scholarship application.</li>
+    </ul>
+  </section>
+</div>
 
 <ul class="impact-grid">
   {% for item in page.impact %}
@@ -85,7 +112,7 @@ Thanks to the support of our Dragon Family, the Booster Club has been able to fu
     {% if item.photo %}
       <img class="impact-photo" src="{{ item.photo | relative_url }}" alt="{{ item.title }}" loading="lazy" decoding="async">
     {% else %}
-      <div class="impact-photo gallery-placeholder">Photo</div>
+      <div class="impact-photo gallery-placeholder">Photo coming soon</div>
     {% endif %}
     <div class="impact-body">
       <h3>{{ item.title }}</h3>
@@ -110,13 +137,3 @@ Thanks to the support of our Dragon Family, the Booster Club has been able to fu
     <p>Contact any Booster Club member or visit us at a home event! You can also <a href="{{ '/sports-boosters/join/' | relative_url }}">become a member</a>, <a href="https://venmo.com/u/CameronSportsBoosters" target="_blank" rel="noopener">donate</a>, or see our <a href="{{ '/sports-boosters/members/' | relative_url }}">members</a>.</p>
   </div>
 </div>
-
-<section class="scholarships" id="scholarships">
-  <h2>Scholarships</h2>
-  <p>The Booster Club awards scholarships to graduating senior athletes. To be eligible:</p>
-  <ul class="scholarship-requirements">
-    <li>Must be an Athletics Booster Club member for 2 years, with one being your senior year.</li>
-    <li>Must be an Athletics Booster Club member by December 31st of your senior year.</li>
-    <li>Must participate in 4 MSHSAA approved seasons in your high school career.</li>
-  </ul>
-</section>

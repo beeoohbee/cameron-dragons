@@ -9,4 +9,5 @@ Have a question or want to get involved with the Cameron Sports Boosters Associa
 <ul class="contact-list">
   <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <strong>Email:</strong> <a href="mailto:cameronsportsbooster@gmail.com">cameronsportsbooster@gmail.com</a></li>
   <li><i class="fa-brands fa-facebook" aria-hidden="true"></i> <strong>Facebook:</strong> <a href="{{ subsite.social.facebook }}" target="_blank" rel="noopener">Cameron Sports Boosters Association<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+  <li><i class="fa-brands fa-instagram" aria-hidden="true"></i> <strong>Instagram:</strong> <a href="{{ subsite.social.instagram }}" target="_blank" rel="noopener">@cameronsportsbooster<span class="visually-hidden"> (opens in a new tab)</span></a></li>
 </ul>
