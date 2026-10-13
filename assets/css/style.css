@@ -1276,3 +1276,44 @@ main.wrap > p { max-width: 72ch; }
 @media (max-width: 760px) {
   .activity-top { grid-template-columns: 1fr; }
 }
+
+/* Contact form: honeypot field (hidden from people, visible to bots) */
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Contact form: result message after sending */
+.form-status {
+  margin: 14px 0 0;
+  font-size: 0.95rem;
+}
+
+.form-status:empty { display: none; }
+
+.form-status.is-success,
+.form-status.is-error {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border-left: 4px solid;
+}
+
+.form-status.is-success {
+  background: #eef8ee;
+  border-color: #2e7d32;
+  color: #1b5e20;
+}
+
+.form-status.is-error {
+  background: #fdecec;
+  border-color: #c62828;
+  color: #8e1c1c;
+}
+
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}

@@ -9,7 +9,7 @@ It's a [Jekyll](https://jekyllrb.com) static site styled after the Cameron R-I S
 **Main site**
 - **Home** (`index.md`) — a landing hero (image on the left fading into black, welcome text and a button on the right), then a card for every organization, then a "Don't see your organization?" note linking to Contact.
 - **About** (`about.md`) — what the site is for and the site's mission statement.
-- **Contact** (`contact.md`) — a form that opens the visitor's email app with their message addressed to the site owner. Linked from every page's footer.
+- **Contact** (`contact.md`) — the site email (mocamerondragons@gmail.com) and a contact form handled by [Formspree](https://formspree.io), which emails submissions to that address. A hidden honeypot field filters out bots. Manage the form and spam settings in the Formspree dashboard. Linked from the top menu and every page's footer.
 
 **Cameron Sports Boosters Association** (`sports-boosters/`)
 - **Home** — the club logo, the "Join today!" section with the membership QR code and form link, and the "One Cameron" band.

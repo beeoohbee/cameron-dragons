@@ -76,6 +76,7 @@ exclude:
   # band_boosters_posts output back to true) to publish it.
   - band-boosters
   - README.md
+  - TODO.md
   - CLAUDE.md
   - Gemfile
   - Gemfile.lock
