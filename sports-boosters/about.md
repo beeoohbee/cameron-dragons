@@ -1,6 +1,7 @@
 ---
 title: About
 permalink: /sports-boosters/about/
+description: "The mission and officers of the Cameron Sports Boosters Association, supporting youth athletics in the Cameron R-I School District."
 ---
 
 ### Our mission

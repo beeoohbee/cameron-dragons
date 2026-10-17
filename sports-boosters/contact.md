@@ -1,6 +1,7 @@
 ---
 title: Contact
 permalink: /sports-boosters/contact/
+description: "Contact the Cameron Sports Boosters Association by email, Facebook, or Instagram."
 ---
 
 {% assign subsite = site.data.subsites | where: "key", page.subsite | first %}

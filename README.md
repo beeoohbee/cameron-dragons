@@ -62,6 +62,12 @@ The repository is public, so `_data/members/sports-boosters.yml` holds **member 
 
 [Font Awesome Free](https://fontawesome.com/icons) is loaded on every page, so any free icon can be used, e.g. `<i class="fa-solid fa-trophy" aria-hidden="true"></i>` or `<i class="fa-brands fa-instagram" aria-hidden="true"></i>`.
 
+### Search engines (SEO)
+
+- Each page can set `seo_title:` (full browser/search title) and `description:` (about 120–160 characters) in its front matter; otherwise the title is "Page | Site name" and the description falls back to the sub-site tagline or the site description in `_config.yml`.
+- `_includes/structured-data.html` adds schema.org data (name, logo, email, social profiles, Cameron, MO) for the site and for each sub-site, from `_config.yml` (`email`, `location`) and `_data/subsites.yml` (`email`, `logo`, `social`).
+- `jekyll-sitemap` and `jekyll-feed` generate `sitemap.xml`, `robots.txt`, and `feed.xml`; they're listed under `plugins:` in `_config.yml` so every builder loads them.
+
 ### Favicon and link previews
 
 - Browser icons (`favicon.ico`, `apple-touch-icon.png`, `assets/images/icons/`) are cropped from the home hero art.

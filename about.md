@@ -2,6 +2,7 @@
 layout: default
 title: About
 permalink: /about/
+description: "About Cameron Dragons: a community hub connecting Cameron, Missouri families and volunteers with the organizations that help local youth learn and grow."
 ---
 
 Cameron Dragons is a community hub for the people and organizations who support Cameron's young people. Behind every game, concert, competition, and celebration is a network of parents, volunteers, coaches, educators, and neighbors giving their time and energy. This site brings those groups together in one place, so it's easier to see who is making a difference, find the organizations that matter to your family, and get involved.

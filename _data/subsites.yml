@@ -3,6 +3,9 @@
   short_name: Sports Boosters
   tagline: Supporting Cameron Dragons athletics — fundraising, concessions, and game-day volunteers.
   url: /sports-boosters/
+  # Used in search-engine structured data (_includes/structured-data.html).
+  email: cameronsportsbooster@gmail.com
+  logo: /assets/images/sports-boosters/logo.png
   # Social links: shown as icons in the sub-site header (top right) and on its
   # contact page. Keys are Font Awesome brand names (facebook, instagram, ...).
   social:

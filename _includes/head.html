@@ -1,16 +1,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | {{ page.site_name | default: site.title }}</title>
+  {% comment %} Search/tab title: a page's `seo_title` if set, else "Title | Site name". {% endcomment %}
+  {% capture page_title %}{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }} | {{ page.site_name | default: site.title }}{% endif %}{% endcapture %}
+  <title>{{ page_title }}</title>
   {% comment %}
     Description and link-preview (Open Graph / Twitter) tags. A page can set its
     own `description` or `share_image` in front matter; sub-site pages fall back
     to their org's tagline, everything else to the site description and the
     default sharing image (assets/images/og-image.jpg, 1200x630).
   {% endcomment %}
-  {% assign head_subsite = site.data.subsites | where: "key", page.subsite | first %}
+  {% assign head_subsite = nil %}
+  {% if page.subsite %}{% assign head_subsite = site.data.subsites | where: "key", page.subsite | first %}{% endif %}
   {% capture page_description %}{{ page.description | default: head_subsite.tagline | default: site.description | strip_newlines | strip }}{% endcapture %}
-  {% capture page_title %}{{ page.title }} | {{ page.site_name | default: site.title }}{% endcapture %}
   {% assign share_image = page.share_image | default: "/assets/images/og-image.jpg" | absolute_url %}
   <meta name="description" content="{{ page_description | escape }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -25,6 +27,7 @@
   <meta property="og:image:alt" content="The Cameron Dragons mascot with the words Cameron Dragons">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ffc71f">
+  {% include structured-data.html %}
   <!-- Icons (cropped from the home page hero art) -->
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
   <link rel="icon" href="{{ '/assets/images/icons/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">

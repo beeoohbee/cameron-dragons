@@ -2,6 +2,7 @@
 layout: default
 title: Contact
 permalink: /contact/
+description: "Contact Cameron Dragons with questions, or let us know about a Cameron, Missouri youth organization that's missing from the site."
 # Contact form is handled by Formspree (https://formspree.io), which emails
 # submissions to mocamerondragons@gmail.com. Manage the form, spam settings,
 # and past messages in the Formspree dashboard.

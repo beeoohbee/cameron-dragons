@@ -2,7 +2,7 @@
 
 The top 10 improvements for camerondragons.com and its sub-sites, most valuable first. Each item says who it's waiting on: **content** (photos, wording, or decisions from the club), **setup** (an account or setting outside this repo), or **code** (can be built in the repo).
 
-_Last reviewed: October 12, 2026._
+_Last reviewed: October 17, 2026._
 
 ---
 
@@ -41,7 +41,7 @@ The membership form already asks members which activities they'll help with, but
 ## 5. Finish the Activity page — *content*
 
 - [ ] Photos for **Dragon Sign at Football Field** and **Softball and Tennis Parking Lot Paint** (currently "Photo coming soon")
-- [ ] Replace the remaining stock photos (batting cages, water cow, cross country tents, track tents, banquet meals, concessions, utility vehicle) with the club's own — then remove their `credit` fields. The **water cow** photo shows another school's (Miami) logo and should go first
+- [ ] Replace the remaining stock photos (batting cages, water cow, cross country tents, track tents, banquet meals, utility vehicle) with the club's own — then remove their `credit` fields. The **water cow** photo shows another school's (Miami) logo and should go first
 - [ ] Confirm the titles and captions written for the new cards (Tennis Tent, Sports Boosters Trailer, Dugout Logo, Soccer Goals, Softball Fence Cups) and the **Utility Vehicle** title (all marked "confirm" in `sports-boosters/activity.md`)
 
 ## 6. Complete the scholarship details — *content*
@@ -75,12 +75,32 @@ News is built but hidden (`published: false` in `sports-boosters/news.md`) becau
 - [ ] Replace the placeholder taglines written for the Swim Team, Baseball Association, Youth Football and Cheer, and PTSA cards with each group's own wording
 - [ ] Reach out to other Cameron youth groups that might want a card (the "Don't see your organization?" box invites this)
 
-## 10. Get found and measure use — *setup + code*
+## 10. Search engines (SEO) and measuring use — *setup + content*
 
-- [ ] Submit `https://camerondragons.com/sitemap.xml` to Google Search Console (and verify the domain)
+The site's own SEO basics are done (see "Done recently"). What's left needs accounts, outreach, or new content:
+
+**Setup (one-time)**
+- [ ] In the repo's **Settings → Pages**, confirm **Source** is **GitHub Actions**. The live site appeared to be built by GitHub's older built-in builder, which is why the sitemap, robots.txt, and feed were missing
+- [ ] After the next deploy, confirm https://camerondragons.com/sitemap.xml and https://camerondragons.com/robots.txt load
+- [ ] Verify `camerondragons.com` in [Google Search Console](https://search.google.com/search-console) (DNS TXT record in GoDaddy) and submit `https://camerondragons.com/sitemap.xml`
+- [ ] Do the same in [Bing Webmaster Tools](https://www.bing.com/webmasters) (it can import from Search Console)
+- [ ] Check the structured data with Google's [Rich Results Test](https://search.google.com/test/rich-results) on the home page and the Sports Boosters home page
 - [ ] Verify `camerondragons.com` as a domain in GitHub account settings (protects against takeover of the custom domain)
 - [ ] Add privacy-friendly visitor stats (e.g. GoatCounter or Cloudflare Web Analytics) to see which pages and links people use
-- [ ] Create a Sports Boosters–branded link-preview image (club logo) so shared Sports Boosters links show their own branding
+
+**Links from other sites** — the biggest ranking factor for a local site
+- [ ] Ask the Cameron R-I School District to link to camerondragons.com (athletics or community page)
+- [ ] Ask the Cameron Chamber of Commerce to add camerondragons.com to its organization listings
+- [ ] Add the website link to the "About"/bio of each group's Facebook and Instagram profiles
+- [ ] Ask Gold sponsors to link to the Sports Boosters page from their websites
+- [ ] List the Sports Boosters in local/nonprofit directories (city of Cameron "Clubs & Organizations" page, Google Business Profile if appropriate)
+
+**Content** (see also items 3 and 8)
+- [ ] Publish events and news regularly, using the words people search for ("Cameron Turkey Trot 5K", "Cameron youth basketball tournament", "Cameron Dragons football schedule")
+- [ ] Give each new page its own `description:` (about 120–160 characters) in its front matter; use `seo_title:` for key pages
+- [ ] Create a Sports Boosters–branded link-preview image (club logo) so shared Sports Boosters links show their own branding (`share_image:` front matter)
+
+**Sponsors**
 - [ ] Ask sponsors for official logo files (and permission), and add a link for C L Bland Farms if it has a website or Facebook page
 
 ---
@@ -93,3 +113,6 @@ News is built but hidden (`published: false` in `sports-boosters/news.md`) becau
 - Contact in the main menu; friendly 404 page; lazy-loaded images
 - Activity page filled with the club's own photos; Scholarships moved to the top
 - Instagram and Facebook links in the Sports Boosters header, contact page, and home page card
+- SEO basics: sitemap, robots.txt, and feed now build on any builder; unique search titles (with "Cameron, MO") and descriptions on every page; structured data describing Cameron Dragons and the Sports Boosters (name, logo, email, social profiles, location); fixed main pages showing the Sports Boosters description to search engines
+- Sports Boosters logo converted to WebP (531 KB → 76 KB)
+- Contact form now sends via Formspree to mocamerondragons@gmail.com

@@ -1,6 +1,7 @@
 ---
 title: Join
 permalink: /sports-boosters/join/
+description: "Join the Cameron Sports Boosters: Gold Business $150, Silver Family $75, Bronze Individual $25, Student Athlete $10. Pay by Venmo, check, cash, or card."
 # Membership levels, from the sign-up form. Edit prices/descriptions here.
 levels:
   - name: Gold Business

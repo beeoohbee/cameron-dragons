@@ -1,6 +1,7 @@
 ---
 title: Activity
 permalink: /sports-boosters/activity/
+description: "What the Cameron Sports Boosters have funded for Cameron Dragons athletes — equipment, tents, concessions, banquets — plus senior athlete scholarships."
 # What the Booster Club has funded, shown as photo cards in this order.
 # Fields: title, caption, optional photo (an image path like
 # /assets/images/sports-boosters/activity/batting-cages.jpg — 4:3 works best;
@@ -56,11 +57,7 @@ impact:
     caption: Showcasing our pride for all to see!
   - title: Softball/Baseball Concessions Update
     caption: Upgrading our stands for a better game day experience.
-    photo: /assets/images/sports-boosters/activity/concessions.jpg
-    credit: "ViajeroExtraviado"
-    credit_url: https://commons.wikimedia.org/wiki/File:Popcorn_9.jpg
-    license: "CC0"
-    license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+    photo: /assets/images/sports-boosters/activity/concessions-stand.jpg
   - title: Softball and Tennis Parking Lot Paint
     caption: Painting balls and names in the parking lot to celebrate our athletes!
   - title: Utility Vehicle # untitled on the poster (pictured: a utility vehicle) — confirm the name

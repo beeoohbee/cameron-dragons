@@ -1,12 +1,14 @@
 ---
 title: Home
 permalink: /sports-boosters/
+seo_title: "Cameron Sports Boosters Association | Cameron, MO"
+description: "The Cameron Sports Boosters Association supports Cameron Dragons athletics in Cameron, Missouri with fundraising, volunteers, and scholarships. Join today."
 hide_title: true
 # Centered logo hero (see _includes/hero.html). The logo is the page's <h1>,
 # so image_alt is the org's full name.
 hero:
   style: centered
-  image: /assets/images/sports-boosters/logo.png
+  image: /assets/images/sports-boosters/logo.webp
   image_alt: Cameron Sports Boosters Association
   text: Supporting Cameron Dragons athletics — fundraising, concessions, and game-day volunteers.
 ---

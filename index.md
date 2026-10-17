@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Home
+seo_title: "Cameron Dragons — Booster Clubs & Youth Organizations | Cameron, MO"
+description: "Find Cameron, Missouri booster clubs, sports teams, and youth programs — Sports Boosters, swim, baseball, youth football, soccer, band, PTSA, and more."
 hide_title: true
 # Landing-page hero (rendered by _includes/hero.html). The image sits on the
 # left and fades into the hero background color behind the text on the right.

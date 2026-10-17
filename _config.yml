@@ -1,9 +1,16 @@
 title: Cameron Dragons
 description: >-
-  Home base for Cameron Dragons organizations — booster clubs, sports teams,
-  and youth programs — with news, events, and how to get involved with each group.
+  Cameron Dragons in Cameron, Missouri: find booster clubs, sports teams, and
+  youth programs that support Cameron students, and see how to get involved.
 baseurl: ""
 url: "https://camerondragons.com"
+# Site contact email and location — used on the Contact page and in
+# search-engine structured data (_includes/structured-data.html).
+email: mocamerondragons@gmail.com
+location:
+  city: Cameron
+  state: MO
+  country: US
 
 # Where to find things
 source: .
@@ -11,6 +18,11 @@ destination: ./_site
 
 # Build settings
 markdown: kramdown
+
+# Listed here (as well as in the Gemfile) so every builder loads them.
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
 permalink: pretty
 
 # Navigation used in the header (see _layouts/default.html)
