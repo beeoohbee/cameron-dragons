@@ -10,7 +10,7 @@ hero:
   style: centered
   image: /assets/images/sports-boosters/logo.webp
   image_alt: Cameron Sports Boosters Association
-  text: Supporting Cameron Dragons athletics — fundraising, concessions, and game-day volunteers.
+  text: Supporting Cameron Dragons athletics in Cameron, Missouri — fundraising, concessions, and game-day volunteers.
 ---
 {% assign subsite = site.data.subsites | where: "key", page.subsite | first %}
 

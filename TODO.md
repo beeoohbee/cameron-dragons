@@ -1,6 +1,6 @@
 # Cameron Dragons — TODO
 
-The top 10 improvements for camerondragons.com and its sub-sites, most valuable first. Each item says who it's waiting on: **content** (photos, wording, or decisions from the club), **setup** (an account or setting outside this repo), or **code** (can be built in the repo).
+The top improvements for camerondragons.com and its sub-sites, most valuable first. Each item says who it's waiting on: **content** (photos, wording, or decisions from the club), **setup** (an account or setting outside this repo), **permission** (another group has to agree first), or **code** (can be built in the repo).
 
 _Last reviewed: October 17, 2026._
 
@@ -103,6 +103,29 @@ The site's own SEO basics are done (see "Done recently"). What's left needs acco
 **Sponsors**
 - [ ] Ask sponsors for official logo files (and permission), and add a link for C L Bland Farms if it has a website or Facebook page
 
+## 11. Local search (Google Maps and "near me" results) — *setup + permission + code*
+
+Local search is about Google connecting each group to **Cameron, Missouri**.
+
+**Google Business Profile**
+- [ ] Create a Google Business Profile for the **Cameron Sports Boosters Association** at business.google.com — **service area** (no public street address), area: Cameron, MO; category "Non-profit organization"; add the website, email, Facebook, Instagram, logo, and photos. Complete Google's verification (postcard, phone, or video)
+- [ ] Suggest the same to the other groups (Swim Team, Baseball Association, Youth Football and Cheer, Soccer Club, Band Boosters, PTSA)
+- [ ] Once a profile exists, ask members and parents for a few genuine Google reviews (never offer anything in exchange)
+
+**Consistent name, website, and email everywhere**
+- [ ] Use exactly "Cameron Sports Boosters Association", `camerondragons.com/sports-boosters/`, and `cameronsportsbooster@gmail.com` on the Google profile, the Facebook "About" section, the Instagram bio, the Chamber of Commerce listing, and the school district's site
+
+**Local listings and links** (also in item 10)
+- [ ] City of Cameron "Clubs & Organizations" page (cameronmo.com)
+- [ ] Local news — Cameron Citizen-Observer, local radio, community Facebook groups — for fundraisers, the Turkey Trot 5K, and scholarship announcements
+
+**A page on this site for each group** — *needs each group's permission first*
+- [ ] Ask each externally linked group (Swim Team, Baseball Association, Youth Football and Cheer, Soccer Club, Band Boosters, PTSA) whether they'd like a short page on camerondragons.com, and get their description, who they serve, where they play/meet, and contact/social links
+- [ ] For each group that agrees: add a page with a Cameron, MO search title and description, structured data, and their Facebook/website link, and point their home page card at it (so searches like "Cameron MO youth football" find this site)
+
+**Events in search results** (after the events calendar in item 3)
+- [ ] Give each event its date, time, and venue (e.g. Cameron High School, the softball field) with schema.org `Event` structured data so Google can show it directly in search results
+
 ---
 
 ## Done recently
@@ -116,3 +139,4 @@ The site's own SEO basics are done (see "Done recently"). What's left needs acco
 - SEO basics: sitemap, robots.txt, and feed now build on any builder; unique search titles (with "Cameron, MO") and descriptions on every page; structured data describing Cameron Dragons and the Sports Boosters (name, logo, email, social profiles, location); fixed main pages showing the Sports Boosters description to search engines
 - Sports Boosters logo converted to WebP (531 KB → 76 KB)
 - Contact form now sends via Formspree to mocamerondragons@gmail.com
+- Local SEO: "Cameron, Missouri" in the footer of every page and in the home and Sports Boosters hero text

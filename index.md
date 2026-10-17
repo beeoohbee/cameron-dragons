@@ -14,9 +14,10 @@ hero:
   image_fit: contain
   title: Cameron Dragons
   text: >-
-    Welcome to **Cameron Dragons** — home base for Cameron Dragons organizations,
-    from booster clubs to sports teams and youth programs. Pick a group below for their news, events,
-    and how to get involved.
+    Welcome to **Cameron Dragons** — home base for the organizations serving
+    Cameron, Missouri youth and Cameron R-I School District families, from booster
+    clubs to sports teams and youth programs. Pick a group below for their news,
+    events, and how to get involved.
   button_text: Find your organization
   button_url: "#organizations"
 ---
